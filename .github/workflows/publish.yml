@@ -1,18 +1,36 @@
 on: [push]
+
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    name: Publish Logseq graph
+    name: Build Logseq graph
     steps:
       - uses: actions/checkout@v4
       - uses: logseq/publish-spa@v0.3.0
       - name: Add a nojekyll file
         run: touch $GITHUB_WORKSPACE/www/.nojekyll
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: www
-          branch: gh-pages
-          clean: true
+          path: ./www
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    name: Deploy to GitHub Pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
