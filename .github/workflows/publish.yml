@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: logseq/publish-spa@v0.3.0
       - name: Add a nojekyll file
-        run: touch $GITHUB_WORKSPACE/www/nojekyll
+        run: touch $GITHUB_WORKSPACE/www/.nojekyll
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
