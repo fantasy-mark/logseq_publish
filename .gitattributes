@@ -1,0 +1,14 @@
+# 设置文本文件处理
+* text=auto
+
+# 明确指定文件类型使用UTF-8编码
+*.md text charset=utf-8
+*.txt text charset=utf-8
+*.css text charset=utf-8
+*.edn text charset=utf-8
+*.yml text charset=utf-8
+*.yaml text charset=utf-8
+
+# 处理中文文件名
+*.md utf-8
+*.txt utf-8
