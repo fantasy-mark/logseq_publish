@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -e                 # 任何一步出错就退出
 
 git add .
