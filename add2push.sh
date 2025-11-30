@@ -8,6 +8,7 @@ git push
 # --- Info ---
 echo
 echo " Push complete! GitHub Pages is building in the background ..."
+echo
 echo "   Build status →  https://github.com/fantasy-mark/logseq_publish/actions "
 echo "   Live preview →  https://fantasy-mark.github.io/logseq_publish/ "
 echo
