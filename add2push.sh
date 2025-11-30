@@ -2,7 +2,7 @@
 set -e                 # 任何一步出错就退出
 
 git add .
-git commit -m "add2push"
+git commit -m "add2push" || true
 git push
 
 # —— 提示信息 ——
