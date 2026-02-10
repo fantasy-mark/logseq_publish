@@ -14,7 +14,7 @@ git add -u  # Only add modifications to tracked files
 
 # Check if there is anything to commit
 if git diff --cached --quiet; then
-    echo "ℹ️ No changes to commit"
+    echo " No changes to commit"
 else
     git commit -m "feat: your descriptive message here"
     git push
@@ -28,9 +28,9 @@ if ! git diff-index --quiet HEAD --; then
     echo
     echo " Push complete! GitHub Pages is building in the background ..."
     echo
-    echo "   Build status ->  https://github.com/fantasy-mark/logseq_publish/actions "
-    echo "   Live preview ->  https://fantasy-mark.github.io/logseq_publish/ "
+    echo " Build status ->  https://github.com/fantasy-mark/logseq_publish/actions "
+    echo " Live preview ->  https://fantasy-mark.github.io/logseq_publish/ "
     echo
 else
-    echo "ℹ️  Working directory is clean, no commits needed"
+    echo " Working directory is clean, no commits needed"
 fi
