@@ -3,7 +3,7 @@
 
 set -e
 
-PROJECT_DIR="/home/admin/project/logseq_publish_app"
+PROJECT_DIR="/home/admin/project/logseq_publish"
 BACKEND_DIR="$PROJECT_DIR/backend"
 FRONTEND_DIR="$PROJECT_DIR/frontend"
 
